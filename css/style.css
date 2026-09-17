@@ -1,0 +1,778 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   LOGIN
+======================================== */
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+.login-card h1 {
+    text-align: center;
+
+    color: #2563eb;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+.alert-error {
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    border: 1px solid #fecaca;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.btn-login {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #1d4ed8;
+}
+
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: flex;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+    width: 210px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    background: #12395b;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Brand */
+
+.brand {
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 15px 16px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-right: 9px;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+
+    margin-bottom: 2px;
+}
+
+.brand-text span {
+    font-size: 7px;
+
+    color: #b8c7d9;
+}
+
+
+/* Menu */
+
+.sidebar-menu {
+    padding: 20px 10px;
+
+    flex: 1;
+}
+
+.sidebar-link {
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    margin-bottom: 5px;
+
+    border-radius: 6px;
+
+    color: #d5e0ec;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+}
+
+.sidebar-link:hover {
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+.sidebar-link.active {
+    background: #2563eb;
+
+    color: white;
+}
+
+.sidebar-link .icon {
+    width: 17px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* Logout */
+
+.sidebar-logout {
+    padding: 15px 10px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.logout-link {
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    color: #d5e0ec;
+
+    font-size: 12px;
+
+    border-radius: 6px;
+}
+
+.logout-link:hover {
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.main {
+    width: calc(100% - 210px);
+
+    margin-left: 210px;
+
+    min-height: 100vh;
+
+    background: #f5f8fc;
+}
+
+
+/* ========================================
+   TOPBAR
+======================================== */
+
+.topbar {
+    height: 75px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5eaf0;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.breadcrumb {
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+.topbar-left h1 {
+    font-size: 20px;
+
+    margin-bottom: 2px;
+}
+
+.topbar-left p {
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+.topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #e8f0ff;
+
+    color: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.user-name strong {
+    display: block;
+
+    font-size: 10px;
+}
+
+.user-name span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+
+    margin-top: 2px;
+}
+
+.arrow {
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.main {
+    padding-bottom: 25px;
+}
+
+.topbar {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.stats,
+.dashboard-content,
+.footer {
+    margin-left: 25px;
+
+    margin-right: 25px;
+}
+
+
+/* ========================================
+   STATISTICS
+======================================== */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+}
+
+.stat-card {
+    height: 78px;
+
+    border-radius: 8px;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid #e6ebf2;
+}
+
+.card-blue {
+    background: #edf5ff;
+}
+
+.card-green {
+    background: #e9fbf3;
+}
+
+.card-orange {
+    background: #fff6e5;
+}
+
+.card-purple {
+    background: #f4edff;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.card-blue .stat-icon {
+    background: #dcecff;
+}
+
+.card-green .stat-icon {
+    background: #d5f5e6;
+}
+
+.card-orange .stat-icon {
+    background: #ffebc4;
+}
+
+.card-purple .stat-icon {
+    background: #e8ddff;
+}
+
+.stat-info span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 8px;
+
+    margin-bottom: 5px;
+}
+
+.stat-info strong {
+    font-size: 17px;
+
+    color: #1e293b;
+}
+
+
+/* ========================================
+   GRAPH + TRANSACTION
+======================================== */
+
+.dashboard-content {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    gap: 15px;
+}
+
+.dashboard-box {
+    background: white;
+
+    border: 1px solid #e5eaf0;
+
+    border-radius: 8px;
+
+    min-height: 310px;
+
+    overflow: hidden;
+}
+
+.box-title {
+    height: 60px;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid #eef2f6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.box-title h2 {
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.box-title p {
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+
+/* ========================================
+   CHART
+======================================== */
+
+.chart-area {
+    height: 245px;
+
+    padding: 15px 15px 10px;
+}
+
+#salesChart {
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* ========================================
+   TRANSACTION TABLE
+======================================== */
+
+.transaction-table {
+    padding: 0 12px;
+}
+
+.transaction-table table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+.transaction-table th {
+    height: 35px;
+
+    text-align: left;
+
+    color: #64748b;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #eef2f6;
+}
+
+.transaction-table td {
+    height: 39px;
+
+    color: #475569;
+
+    font-size: 8px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.transaction-table th:nth-child(1),
+.transaction-table td:nth-child(1) {
+    width: 30px;
+}
+
+.transaction-table th:nth-child(2),
+.transaction-table td:nth-child(2) {
+    width: 100px;
+}
+
+.transaction-table th:nth-child(3),
+.transaction-table td:nth-child(3) {
+    width: 90px;
+}
+
+.transaction-table th:nth-child(4),
+.transaction-table td:nth-child(4) {
+    width: 65px;
+}
+
+.transaction-footer {
+    padding: 12px;
+
+    text-align: right;
+}
+
+.transaction-footer a {
+    color: #2563eb;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.empty {
+    text-align: center;
+
+    color: #94a3b8 !important;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+
+    padding: 20px 0;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 65px;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .brand-icon {
+        margin: 0;
+    }
+
+    .sidebar-link span:last-child,
+    .logout-link span:last-child {
+        display: none;
+    }
+
+    .sidebar-link,
+    .logout-link {
+        justify-content: center;
+    }
+
+    .main {
+        width: calc(100% - 65px);
+
+        margin-left: 65px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats,
+    .dashboard-content,
+    .footer {
+        margin-left: 15px;
+
+        margin-right: 15px;
+    }
+
+}
